@@ -1,0 +1,91 @@
+
+<div class="container">
+  <div id="bigface">
+  <div class="card" id="cardmen" class="d-none">
+    <div class="card-body d-none" id="cardbody">
+      <div class="alert-info d-none text-center" id="res2">
+        <h3 id="title2" class="d-none text-justify-center">Ok <span id="fullname"></span>, por favor
+          <span id="feel" class="text-primary">SONRIE</span> mirando hacia la cámara.</h3>
+      </div>
+      <div id="info" class="d-none text-center mr-2">
+        <p class="text-justify-center">Por favor espera un momento</p>
+        <br>
+        <div id="info-loading" class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-init="init()" class="row my-2 d-none" id="video-player">
+    <div  id="reko" class="col-sm-12 col-md-12 col-xl-8">
+      <figure id="reko22">
+        <video id="video" width="334" height="250" autoplay muted ></video>
+      </figure>  
+
+    </div>
+    <div id="pics" class="col-sm-12 col-md-12 col-xl-4 d-flex flex-sm-row justify-content-between">
+      <div class="card mt-1 w-100">
+        <div class="card-header bg-primary text-justify-center">
+          <label class="text-center">RECONOCIMIENTO FACIAL</label>
+        </div>
+        <div class="card-body">
+          <div class="p-1 text-center position-relative">
+            <div id="pic-happy" class="pic"></div>
+            Feliz
+            <div id="pic-happy-spinner" class="spinner-border text-info d-none" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <span id="pic-happy-similarity">
+                                    <img src="https://big-rekognition.s3.amazonaws.com/images/happy.png"
+                                         class="rounded mx-auto d-block">
+                                </span>
+          </div>
+          <br>
+
+          <div class="p-1 text-center position-relative">
+            <div id="pic-neutral" class="pic"></div>
+            neutral
+            <div id="pic-neutral-spinner" class="spinner-border text-info d-none" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <span id="pic-neutral-similarity">
+                                    <img src="https://big-rekognition.s3.amazonaws.com/images/neutral.png"
+                                         class="rounded mx-auto d-block">
+                                </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-xl-12">
+      <div class="container">
+        <div class="mt-5 text-center mx-auto d-flex">
+          <div class="card" id="cardT">
+            <div class="card-header text-justify-center" id="cardH">
+              <h3 id="title" class="text-justify">
+                ¡Hola!, vamos a iniciar el proceso de validación de identidad, por favor retirate los
+                lentes y mira fijamente a la cámara cuando se te indique. También realiza las
+                expresiones solicitadas.!
+              </h3>
+            </div>
+            <div class="card-body text-center" id="cardB">
+              <button class="btn btn-primary" onclick="startProcess()">Ok, iniciar</button>
+            </div>
+          </div>
+          <!-- mensaje -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-none">
+    <canvas id="canvas" height="480" width="640"></canvas>
+    <form action="" id="formUpload" enctype="multipart/form-data">
+      <input type="hidden" id="dni" value="" name="dni">
+    </form>
+  </div>
+</div>
+</div>
+
